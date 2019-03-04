@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export const CreateElementComponent = () => {
+export function CreateElementComponent() {
     return React.createElement('h2', null, 'Hello from CreateElement component');
-};
+}
