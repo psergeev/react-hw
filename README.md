@@ -1,1 +1,1 @@
-# react-hw
+ReactJS Global Mentoring Program, homework
