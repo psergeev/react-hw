@@ -1,10 +1,10 @@
-ReactJS Global Mentoring Program, homework 2
+ReactJS Global Mentoring Program, homework 3
 
-Module #2: Webpack
+Module #3: Components
 
 steps:
-1. checkout hw2 branch 
+1. checkout hw3 branch 
 2. yarn install
-3. npm run serve.dev - for development
-4. npm run build.prod - for production build
-5. npm run test - for jest tests
+3. npm run serve.dev
+4. open http://localhost:8080/
+
