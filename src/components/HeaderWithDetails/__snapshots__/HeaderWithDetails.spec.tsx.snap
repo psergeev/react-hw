@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderWithDetails component works as expected 1`] = `
+<header>
+  <div
+    className="top-line"
+  >
+    <h1
+      className="title"
+    >
+      netflixroulette
+    </h1>
+    <button
+      onClick={[MockFunction]}
+      type="button"
+    >
+      BACK TO SEARCH
+    </button>
+  </div>
+  <div
+    className="details-line"
+  >
+    <img
+      alt="Kill Bill: Vol. 1"
+      src="https://image.tmdb.org/t/p/w500/97fNAi62HawGjWru7PvVmF7RAbU.jpg"
+    />
+    <ul
+      className="details"
+    >
+      <li>
+        <span
+          className="title"
+        >
+          Kill Bill: Vol. 1
+        </span>
+        <VoteMark
+          vote={7.8}
+        />
+      </li>
+      <li
+        className="tagline"
+      >
+        Go for the kill.
+      </li>
+      <li>
+        <span
+          className="release-date"
+        >
+          2003
+        </span>
+        <span
+          className="runtime"
+        >
+          111 min
+        </span>
+      </li>
+      <li
+        className="overview"
+      >
+        An assassin is shot at the altar by her ruthless employer, Bill and other members of their assassination circle – but 'The Bride' lives to plot her vengeance. Setting out for some payback, she makes a death list and hunts down those who wronged her, saving Bill for last.
+      </li>
+    </ul>
+  </div>
+</header>
+`;

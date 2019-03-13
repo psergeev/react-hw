@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Movie } from '../App';
+import { Movie } from '../../App';
 import MovieCard from '../MovieCard';
 import ResultsDescription from '../ResultsDescription';
 import ResultsSorter from '../ResultsSorter';

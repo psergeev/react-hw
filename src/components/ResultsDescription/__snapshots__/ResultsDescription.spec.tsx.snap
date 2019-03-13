@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsDescription component works as expected 1`] = `
+<div
+  className="results-description"
+>
+  Films by Fiction genre
+</div>
+`;

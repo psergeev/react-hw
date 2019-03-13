@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Movie } from '../App';
+import { Movie } from '../../App';
 import VoteMark from '../VoteMark';
 import './HeaderWithDetails.scss';
 

@@ -18,6 +18,15 @@
     "browser": true,
     "node": true
   },
+  "overrides": [{
+    "files": [
+      "**/*.spec.tsx",
+      "**/*.spec.ts"
+    ],
+    "env": {
+      "jest": true
+    }
+  }],
   "rules": {
     "indent": ["error", 4],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
@@ -31,6 +40,7 @@
     "comma-dangle": 0,
     "jsx-a11y/anchor-is-valid": 0,
     "import/no-unresolved": 0,
-    "@typescript-eslint/explicit-function-return-type": 0
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
   }
 }

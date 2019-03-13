@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderWithSearch component works as expected 1`] = `
+<header>
+  <h1
+    className="title"
+  >
+    netflixroulette
+  </h1>
+  <p
+    className="find-text"
+  >
+    find your movie
+  </p>
+  <div
+    className="search-input"
+  >
+    <input
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <div
+    className="search-controls"
+  >
+    <div
+      className="search-by"
+    >
+      <span>
+        Search by
+      </span>
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={true}
+        value="title"
+      />
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={false}
+        value="genre"
+      />
+    </div>
+    <button
+      type="button"
+    >
+      Search
+    </button>
+  </div>
+</header>
+`;
+
+exports[`HeaderWithSearch should show typed text 1`] = `
+<header>
+  <h1
+    className="title"
+  >
+    netflixroulette
+  </h1>
+  <p
+    className="find-text"
+  >
+    find your movie
+  </p>
+  <div
+    className="search-input"
+  >
+    <input
+      onChange={[Function]}
+      value="123"
+    />
+  </div>
+  <div
+    className="search-controls"
+  >
+    <div
+      className="search-by"
+    >
+      <span>
+        Search by
+      </span>
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={true}
+        value="title"
+      />
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={false}
+        value="genre"
+      />
+    </div>
+    <button
+      type="button"
+    >
+      Search
+    </button>
+  </div>
+</header>
+`;
+
+exports[`HeaderWithSearch should switch search by button 1`] = `
+<header>
+  <h1
+    className="title"
+  >
+    netflixroulette
+  </h1>
+  <p
+    className="find-text"
+  >
+    find your movie
+  </p>
+  <div
+    className="search-input"
+  >
+    <input
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <div
+    className="search-controls"
+  >
+    <div
+      className="search-by"
+    >
+      <span>
+        Search by
+      </span>
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={false}
+        value="title"
+      />
+      <SearchByButton
+        handleSearchByClick={[Function]}
+        selected={true}
+        value="genre"
+      />
+    </div>
+    <button
+      type="button"
+    >
+      Search
+    </button>
+  </div>
+</header>
+`;

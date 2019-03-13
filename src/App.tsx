@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './App.scss';
-import BodyWithResults from './BodyWithResults';
-import Footer from './Footer';
-import HeaderWithDetails from './HeaderWithDetails';
-import HeaderWithSearch from './HeaderWithSearch';
+import BodyWithResults from './components/BodyWithResults';
+import Footer from './components/Footer';
+import HeaderWithDetails from './components/HeaderWithDetails';
+import HeaderWithSearch from './components/HeaderWithSearch';
 
 export interface Movie {
     poster_path: string;
@@ -56,24 +56,6 @@ export class App extends React.PureComponent<{}, State> {
         this.setState({ selectedMovie: null });
     }
 
-    public render() {
-        if (this.state.hasError) {
-            return <h1>Something went wrong with js code.</h1>;
-        }
-
-        return (
-            <main>
-                {this._getHeaderComponent()}
-                <BodyWithResults
-                    handleMovieCardClick={this.handleMovieCardClick}
-                    genre={(this.state.selectedMovie && this.state.selectedMovie.genres.join(' & ')) as string}
-                    movies={this.state.movies}
-                />
-                <Footer />
-            </main>
-        );
-    }
-
     private _getHeaderComponent() {
         if (this.state.selectedMovie) {
             return (
@@ -122,5 +104,23 @@ export class App extends React.PureComponent<{}, State> {
                 ],
             }],
         });
+    }
+
+    public render() {
+        if (this.state.hasError) {
+            return <h1>Something went wrong with js code.</h1>;
+        }
+
+        return (
+            <main>
+                {this._getHeaderComponent()}
+                <BodyWithResults
+                    handleMovieCardClick={this.handleMovieCardClick}
+                    genre={(this.state.selectedMovie && this.state.selectedMovie.genres.join(' & ')) as string}
+                    movies={this.state.movies}
+                />
+                <Footer />
+            </main>
+        );
     }
 }

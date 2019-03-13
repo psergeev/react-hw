@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VoteMark component works as expected 1`] = `
+<div
+  className="vote-mark"
+>
+  7.6
+</div>
+`;
