@@ -1,0 +1,60 @@
+header {
+    background-color: #222;
+    padding: 20px 50px;
+
+    .top-line {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            color: #b3505d;
+            text-transform: uppercase;
+            padding: 10px 60px;
+            border: none;
+        }
+    }
+
+    .details-line {
+        margin-top: 30px;
+        display: flex;
+
+        img {
+            flex: 0 0 250px;
+            width: 250px;
+            height: 375px;
+        }
+
+        .details {
+            list-style: none;
+            margin: 20px 0 0 50px;
+            padding: 0;
+            display: inline-block;
+
+            li {
+                margin: 10px 0;
+            }
+
+            .title {
+                color: #E65463;
+                font-size: 30px;
+            }
+
+            .tagline,
+            .overview {
+                color: #A9A9A9;
+                font-size: 14px;
+            }
+
+            .runtime,
+            .release-date {
+                color: #fff;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .release-date {
+                margin-right: 30px;
+            }
+        }
+    }
+}

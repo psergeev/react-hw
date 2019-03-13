@@ -1,0 +1,9 @@
+.sort-by-button {
+    margin-left: 30px;
+    color: #666;
+    text-decoration: none;
+
+    &.selected {
+        color: #F45263;
+    }
+}
