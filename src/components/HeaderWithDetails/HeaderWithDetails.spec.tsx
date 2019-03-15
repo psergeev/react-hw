@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import HeaderWithDetails from '.';
+import HeaderWithDetails from './HeaderWithDetails';
 import movie from './__fixtures__/movie';
 
 jest.mock('../VoteMark', () => 'VoteMark');
@@ -8,7 +8,7 @@ jest.mock('../VoteMark', () => 'VoteMark');
 test('HeaderWithDetails component works as expected', () => {
     const component = renderer.create(
         <HeaderWithDetails
-            handleBackToSearchClick={jest.fn()}
+            onBackToSearchClick={jest.fn()}
             movie={movie}
         />
     );

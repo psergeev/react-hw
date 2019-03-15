@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import SortByButton from '.';
+import SortByButton from './SortByButton';
 
 test('SortByButton component works as expected', () => {
     const component = renderer.create(

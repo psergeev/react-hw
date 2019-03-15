@@ -5,14 +5,14 @@ import './HeaderWithDetails.scss';
 
 interface Props {
     movie: Movie;
-    handleBackToSearchClick: React.MouseEventHandler;
+    onBackToSearchClick: any;
 }
 
 export default React.memo((props: Props) => (
     <header>
         <div className="top-line">
             <h1 className="title">netflixroulette</h1>
-            <button type="button" onClick={props.handleBackToSearchClick}>BACK TO SEARCH</button>
+            <button type="button" onClick={props.onBackToSearchClick}>BACK TO SEARCH</button>
         </div>
         <div className="details-line">
             <img src={props.movie.poster_path} alt={props.movie.title} />

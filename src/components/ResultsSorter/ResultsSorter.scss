@@ -2,10 +2,17 @@
     background-color: #F5F5F5;
     height: 40px;
     line-height: 40px;
-    display: flex;
-    justify-content: space-between;
 
-    &>div {
+    >div {
+        display: flex;
+        justify-content: space-between;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    & div>div {
         margin: 0 50px;
         color: #666;
     }

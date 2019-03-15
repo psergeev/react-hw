@@ -9,6 +9,7 @@ interface Props {
     movies: Movie[];
     handleMovieCardClick: (title: string) => void;
     genre: string;
+    isEmpty: boolean;
 }
 
 export default React.memo((props: Props) => {
@@ -20,15 +21,28 @@ export default React.memo((props: Props) => {
         />
     ));
 
+    const getResultList = () => {
+        if (!props.movies.length && !props.isEmpty) {
+            return <h2 className="results-not-found">No films found</h2>;
+        }
+
+        if (!props.isEmpty) {
+            return (
+                <div className="results-list">
+                    {movieCards}
+                </div>
+            );
+        }
+
+        return '';
+    };
+
     return (
         <section className="results">
             {props.genre ? <ResultsDescription genre={props.genre} /> :
                 <ResultsSorter moviesCount={props.movies.length} />}
 
-            <div className="results-list">
-                {movieCards}
-            </div>
-            { /* <h2 className="results-not-found">No films found</h2> */}
+            {getResultList()}
         </section>
     );
 });

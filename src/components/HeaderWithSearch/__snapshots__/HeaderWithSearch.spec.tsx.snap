@@ -30,17 +30,20 @@ exports[`HeaderWithSearch component works as expected 1`] = `
         Search by
       </span>
       <SearchByButton
-        handleSearchByClick={[Function]}
+        handleSearchByClick={[MockFunction]}
         selected={true}
         value="title"
       />
       <SearchByButton
-        handleSearchByClick={[Function]}
+        handleSearchByClick={[MockFunction]}
         selected={false}
-        value="genre"
+        value="genres"
       />
     </div>
     <button
+      className="disabled"
+      disabled={true}
+      onClick={[Function]}
       type="button"
     >
       Search
@@ -79,17 +82,20 @@ exports[`HeaderWithSearch should show typed text 1`] = `
         Search by
       </span>
       <SearchByButton
-        handleSearchByClick={[Function]}
+        handleSearchByClick={[MockFunction]}
         selected={true}
         value="title"
       />
       <SearchByButton
-        handleSearchByClick={[Function]}
+        handleSearchByClick={[MockFunction]}
         selected={false}
-        value="genre"
+        value="genres"
       />
     </div>
     <button
+      className=""
+      disabled={false}
+      onClick={[Function]}
       type="button"
     >
       Search
@@ -128,17 +134,20 @@ exports[`HeaderWithSearch should switch search by button 1`] = `
         Search by
       </span>
       <SearchByButton
-        handleSearchByClick={[Function]}
+        handleSearchByClick={[MockFunction]}
         selected={false}
         value="title"
       />
       <SearchByButton
-        handleSearchByClick={[Function]}
-        selected={true}
-        value="genre"
+        handleSearchByClick={[MockFunction]}
+        selected={false}
+        value="genres"
       />
     </div>
     <button
+      className="disabled"
+      disabled={true}
+      onClick={[Function]}
       type="button"
     >
       Search

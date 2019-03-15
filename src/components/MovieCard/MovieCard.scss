@@ -4,7 +4,7 @@
     cursor: pointer;
     list-style: none;
     padding: 0;
-    margin: 0 20px 10px 20px;
+    margin: 0 15px 10px 15px;
 
     img {
         user-drag: none;
@@ -26,6 +26,7 @@
         .title {
             text-transform: uppercase;
             font-size: 16px;
+            max-width: 180px;
         }
 
         .date {
@@ -39,5 +40,6 @@
         color: #ccc;
         font-size: 12px;
         padding: 0 5px 5px 5px;
+        max-width: 200px;
     }
 }

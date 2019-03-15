@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import SearchByButton from '.';
+import SearchByButton from './SearchByButton';
 
 test('SearchByButton component works as expected', () => {
     const component = renderer.create(
