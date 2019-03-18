@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchByButton component can be selected 1`] = `
+<a
+  className="search-by-button selected"
+  href="#"
+  onClick={[Function]}
+>
+  value
+</a>
+`;
+
+exports[`SearchByButton component works as expected 1`] = `
+<a
+  className="search-by-button "
+  href="#"
+  onClick={[Function]}
+>
+  value
+</a>
+`;

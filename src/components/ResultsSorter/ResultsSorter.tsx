@@ -21,6 +21,12 @@ export default class extends React.PureComponent<Props, State> {
         this._handleSortByClick = this._handleSortByClick.bind(this);
     }
 
+    private _handleSortByClick(value: string) {
+        this.setState({
+            sortBy: value
+        });
+    }
+
     public render() {
         return (
             <div className="results-sorter">
@@ -41,11 +47,5 @@ export default class extends React.PureComponent<Props, State> {
                 </div>
             </div>
         );
-    }
-
-    private _handleSortByClick(value: string) {
-        this.setState({
-            sortBy: value
-        });
     }
 }

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortByButton component can be selected 1`] = `
+<a
+  className="sort-by-button selected"
+  href="#"
+  onClick={[Function]}
+>
+  value
+</a>
+`;
+
+exports[`SortByButton component works as expected 1`] = `
+<a
+  className="sort-by-button "
+  href="#"
+  onClick={[Function]}
+>
+  value
+</a>
+`;

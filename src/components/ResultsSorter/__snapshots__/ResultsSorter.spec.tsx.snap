@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsSorter component works as expected 1`] = `
+<div
+  className="results-sorter"
+>
+  <div>
+    10 movie(s) found
+  </div>
+  <div>
+    <span>
+      Sort by
+    </span>
+    <SortByButton
+      handleSortByClick={[Function]}
+      selected={false}
+      value="release date"
+    />
+    <SortByButton
+      handleSortByClick={[Function]}
+      selected={true}
+      value="rating"
+    />
+  </div>
+</div>
+`;
+
+exports[`ResultsSorter should switch sort by button 1`] = `
+<div
+  className="results-sorter"
+>
+  <div>
+    10 movie(s) found
+  </div>
+  <div>
+    <span>
+      Sort by
+    </span>
+    <SortByButton
+      handleSortByClick={[Function]}
+      selected={true}
+      value="release date"
+    />
+    <SortByButton
+      handleSortByClick={[Function]}
+      selected={false}
+      value="rating"
+    />
+  </div>
+</div>
+`;

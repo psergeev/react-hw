@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard component works as expected 1`] = `
+<ul
+  className="movie-card"
+  onClick={[Function]}
+  role="presentation"
+>
+  <li>
+    <img
+      alt="{props.title}"
+      draggable={false}
+      src="https://image.tmdb.org/t/p/w500/97fNAi62HawGjWru7PvVmF7RAbU.jpg"
+      width="250px"
+    />
+  </li>
+  <li
+    className="title-date"
+  >
+    <span
+      className="title"
+    >
+      Kill Bill: Vol. 1
+    </span>
+    <span
+      className="date"
+    >
+      2003
+    </span>
+  </li>
+  <li
+    className="genres"
+  >
+    Action & Crime
+  </li>
+</ul>
+`;
