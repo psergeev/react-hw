@@ -1,5 +1,3 @@
-'use strict';
-
 const Webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.config');
@@ -29,6 +27,9 @@ const devServerOptions = Object.assign({}, config.devServer || {}, {
         modules: false,
         entrypoints: false
     },
+    historyApiFallback: {
+        index: 'index.html'
+    }
 });
 
 new WebpackDevServer(compiler, devServerOptions).listen(8080, '127.0.0.1', () => {

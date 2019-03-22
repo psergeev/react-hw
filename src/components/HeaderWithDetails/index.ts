@@ -1,10 +1,17 @@
 import { connect } from 'react-redux';
-import { showSearchAction } from '../../state/actions';
+import { fetchMovieAction, showSearchAction } from '../../state/actions';
+import { State } from '../../state/reducers';
 import HeaderWithDetails from './HeaderWithDetails';
 
+const mapStateToProps = (state: State) => ({
+    movie: state.selectedMovie,
+    search: state.search
+});
+
 export default connect(
-    null,
+    mapStateToProps,
     {
-        handleBackToSearchClick: showSearchAction
+        handleBackToSearchClick: showSearchAction,
+        fetchMovie: fetchMovieAction.request
     }
 )(HeaderWithDetails);

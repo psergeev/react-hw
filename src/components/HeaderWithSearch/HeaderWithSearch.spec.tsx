@@ -6,11 +6,18 @@ import HeaderWithSearch from './HeaderWithSearch';
 jest.mock('../SearchByButton', () => 'SearchByButton');
 
 const props = {
-    searchBy: 'title',
-    sortBy: 'rating',
-    search: '',
-    handleSearchByChange: jest.fn(),
-    handleSearchClick: jest.fn(),
+    ...{
+        searchBy: 'title',
+        sortBy: 'rating',
+        search: '',
+        handleSearchByChange: jest.fn(),
+        handleSearchClick: jest.fn(),
+    },
+    ...{
+        history: {},
+        location: {},
+        match: { params: { typedText: 'Kill Bill' } },
+    } as any
 };
 
 test('HeaderWithSearch component works as expected', () => {

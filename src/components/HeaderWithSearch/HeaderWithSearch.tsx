@@ -1,8 +1,13 @@
 import * as React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import SearchByButton from '../SearchByButton';
 import './HeaderWithSearch.scss';
 
-interface Props {
+interface MatchParams {
+    typedText: string;
+}
+
+interface Props extends RouteComponentProps<MatchParams> {
     searchBy: string;
     sortBy: string;
     search: string;
@@ -19,16 +24,27 @@ export default class extends React.PureComponent<Props, State> {
         super(props);
 
         this.state = {
-            textTyped: props.search || ''
+            textTyped: props.match.params.typedText || props.search || ''
         };
 
         this._handleKeyPress = this._handleKeyPress.bind(this);
-        this._handleSearchClick = this._handleSearchClick.bind(this);
+        this._handleSearch = this._handleSearch.bind(this);
+        this._onSearchButtonClick = this._onSearchButtonClick.bind(this);
+    }
+
+    public componentDidMount() {
+        if (this.props.match.params.typedText) {
+            this._handleSearch(this.props.match.params.typedText);
+        }
     }
 
     public componentDidUpdate(prevProps: Props) {
         if (this.props.sortBy !== prevProps.sortBy) {
-            this._handleSearchClick(null, this.props.search);
+            this._handleSearch(this.props.search);
+        }
+
+        if (this.props.match.params.typedText !== prevProps.match.params.typedText) {
+            this._handleSearch(this.props.match.params.typedText);
         }
     }
 
@@ -38,11 +54,15 @@ export default class extends React.PureComponent<Props, State> {
         });
     }
 
-    private _handleSearchClick(event: any, search?: string) {
-        const searchValue = search || this.state.textTyped;
+    private _handleSearch(search: string) {
+        if (search.length) {
+            this.props.handleSearchClick(search);
+        }
+    }
 
-        if (searchValue.length) {
-            this.props.handleSearchClick(this.state.textTyped);
+    private _onSearchButtonClick() {
+        if (this.state.textTyped.length) {
+            this.props.history.push(`/search/${this.state.textTyped}`);
         }
     }
 
@@ -76,7 +96,7 @@ export default class extends React.PureComponent<Props, State> {
 
                     <button
                         type="button"
-                        onClick={this._handleSearchClick}
+                        onClick={this._onSearchButtonClick}
                         disabled={this.state.textTyped.length === 0}
                         className={`${(this.state.textTyped.length === 0 ? 'disabled' : '')}`}
                     >

@@ -17,7 +17,7 @@ exports[`HeaderWithSearch component works as expected 1`] = `
   >
     <input
       onChange={[Function]}
-      value=""
+      value="Kill Bill"
     />
   </div>
   <div
@@ -41,8 +41,8 @@ exports[`HeaderWithSearch component works as expected 1`] = `
       />
     </div>
     <button
-      className="disabled"
-      disabled={true}
+      className=""
+      disabled={false}
       onClick={[Function]}
       type="button"
     >
@@ -121,7 +121,7 @@ exports[`HeaderWithSearch should switch search by button 1`] = `
   >
     <input
       onChange={[Function]}
-      value=""
+      value="Kill Bill"
     />
   </div>
   <div
@@ -145,8 +145,8 @@ exports[`HeaderWithSearch should switch search by button 1`] = `
       />
     </div>
     <button
-      className="disabled"
-      disabled={true}
+      className=""
+      disabled={false}
       onClick={[Function]}
       type="button"
     >

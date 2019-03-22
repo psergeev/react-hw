@@ -1,9 +1,10 @@
 import * as React from 'react';
-import './App.scss';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BodyWithResults from '../BodyWithResults';
 import Footer from '../Footer';
 import HeaderWithDetails from '../HeaderWithDetails';
 import HeaderWithSearch from '../HeaderWithSearch';
+import './App.scss';
 
 export interface Movie {
     id: number;
@@ -23,11 +24,11 @@ interface Props {
     handleMovieCardClick: (movie: Movie) => void;
 }
 
-interface AppState {
+interface State {
     hasError: boolean;
 }
 
-export default class extends React.PureComponent<Props, AppState> {
+export default class extends React.PureComponent<Props, State> {
     public constructor(props: Props) {
         super(props);
 
@@ -52,18 +53,6 @@ export default class extends React.PureComponent<Props, AppState> {
         }
     }
 
-    private _getHeaderComponent() {
-        if (this.props.selectedMovie) {
-            return (
-                <HeaderWithDetails
-                    movie={this.props.selectedMovie}
-                />
-            );
-        }
-
-        return <HeaderWithSearch />;
-    }
-
     public render() {
         if (this.state.hasError) {
             return <h1>Something went wrong with js code.</h1>;
@@ -71,11 +60,18 @@ export default class extends React.PureComponent<Props, AppState> {
 
         return (
             <main>
-                {this._getHeaderComponent()}
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={HeaderWithSearch} />
+                        <Route path="/search/:typedText" component={HeaderWithSearch} />
+                        <Route path="/film/:id" component={HeaderWithDetails} />
+                    </Switch>
+                </Router>
+
                 <BodyWithResults
-                    handleMovieCardClick={this.handleMovieCardClick}
                     genre={(this.props.selectedMovie && this.props.selectedMovie.genres.join(' & ')) as string}
                     movies={this.props.movies}
+                    handleMovieCardClick={this.handleMovieCardClick}
                 />
                 <Footer />
             </main>

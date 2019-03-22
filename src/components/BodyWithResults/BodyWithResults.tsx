@@ -15,8 +15,8 @@ interface Props {
 export default React.memo((props: Props) => {
     const movieCards = props.movies.map(movie => (
         <MovieCard
-            handleMovieCardClick={props.handleMovieCardClick}
             movie={movie}
+            handleMovieCardClick={props.handleMovieCardClick}
             key={movie.title}
         />
     ));

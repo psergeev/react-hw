@@ -6,27 +6,46 @@ exports[`App component should catch js errors 1`] = `
 </h1>
 `;
 
-exports[`App component should show header with details 1`] = `
+exports[`App component works as expected 1`] = `
 <main>
-  <HeaderWithDetails
-    movie={
+  <HeaderWithSearch
+    history={
       Object {
-        "genres": Array [],
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+    location={
+      Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      }
+    }
+    match={
+      Object {
+        "isExact": true,
+        "params": Object {},
+        "path": "/",
+        "url": "/",
       }
     }
   />
-  <BodyWithResults
-    genre=""
-    handleMovieCardClick={[Function]}
-    movies={Array []}
-  />
-  <Footer />
-</main>
-`;
-
-exports[`App component works as expected 1`] = `
-<main>
-  <HeaderWithSearch />
   <BodyWithResults
     genre={null}
     handleMovieCardClick={[Function]}
