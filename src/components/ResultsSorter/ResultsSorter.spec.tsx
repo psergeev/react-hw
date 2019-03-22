@@ -8,7 +8,7 @@ jest.mock('../SortByButton', () => 'SortByButton');
 const props = {
     moviesCount: 10,
     sortBy: 'rating',
-    onSortByChange: jest.fn(),
+    handleSortByChange: jest.fn(),
 };
 
 test('ResultsSorter component works as expected', () => {
@@ -23,8 +23,7 @@ test('ResultsSorter component works as expected', () => {
 });
 
 test('ResultsSorter should switch sort by button', () => {
-    const testProps = { ...props, sortBy: 'release date' };
-    const component = shallow(<ResultsSorter {...testProps} />);
+    const component = shallow(<ResultsSorter {...props} sortBy="release date" />);
 
     expect(component).toMatchSnapshot();
 });

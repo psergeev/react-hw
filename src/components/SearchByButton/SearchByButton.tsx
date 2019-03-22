@@ -4,7 +4,7 @@ import './SearchByButton.scss';
 interface Props {
     value: string;
     selected: boolean;
-    handleSearchByClick: any;
+    handleSearchByClick: (value: string) => void;
 }
 
 export default React.memo((props: Props) => {

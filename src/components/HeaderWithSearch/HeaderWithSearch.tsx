@@ -6,8 +6,8 @@ interface Props {
     searchBy: string;
     sortBy: string;
     search: string;
-    onSearchByChange: Function;
-    onSearchClick: Function;
+    handleSearchByChange: (value: string) => void;
+    handleSearchClick: (value: string) => void;
 }
 
 interface State {
@@ -28,7 +28,7 @@ export default class extends React.PureComponent<Props, State> {
 
     public componentDidUpdate(prevProps: Props) {
         if (this.props.sortBy !== prevProps.sortBy) {
-            this._handleSearchClick();
+            this._handleSearchClick(null, this.props.search);
         }
     }
 
@@ -38,13 +38,11 @@ export default class extends React.PureComponent<Props, State> {
         });
     }
 
-    private _handleSearchClick() {
-        if (this.state.textTyped.length) {
-            this.props.onSearchClick({
-                search: this.state.textTyped,
-                searchBy: this.props.searchBy,
-                sortBy: this.props.sortBy === 'rating' ? 'vote_average' : 'release_date'
-            });
+    private _handleSearchClick(event: any, search?: string) {
+        const searchValue = search || this.state.textTyped;
+
+        if (searchValue.length) {
+            this.props.handleSearchClick(this.state.textTyped);
         }
     }
 
@@ -66,13 +64,13 @@ export default class extends React.PureComponent<Props, State> {
                         <SearchByButton
                             value="title"
                             selected={this.props.searchBy === 'title'}
-                            handleSearchByClick={this.props.onSearchByChange}
+                            handleSearchByClick={this.props.handleSearchByChange}
                         />
 
                         <SearchByButton
                             value="genres"
                             selected={this.props.searchBy === 'genres'}
-                            handleSearchByClick={this.props.onSearchByChange}
+                            handleSearchByClick={this.props.handleSearchByChange}
                         />
                     </div>
 

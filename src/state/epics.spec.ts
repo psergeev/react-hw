@@ -13,7 +13,9 @@ test('moviesGetEpic should works for fetchMoviesAction.request action', (done) =
         actions.fetchMoviesAction.request('value')
     );
 
-    epic(action$)
+    const state = { value: { searchBy: '', sortBy: '' } };
+
+    epic(action$, state)
         .subscribe((actual: any) => {
             expect(actual).toEqual({ payload: movies, type: 'FETCH_MOVIES_SUCCESS' });
             done();

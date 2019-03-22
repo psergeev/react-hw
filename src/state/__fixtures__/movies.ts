@@ -1,4 +1,4 @@
-import { Movie } from '../../App';
+import { Movie } from '../../components/App/App';
 
 const movies: Movie[] = [{
     id: 1,

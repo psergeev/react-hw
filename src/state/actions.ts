@@ -1,5 +1,5 @@
 import { createAction, createAsyncAction } from 'typesafe-actions';
-import { Movie } from '../App';
+import { Movie } from '../components/App/App';
 
 export const searchByAction = createAction('SEARCH_BY_REQUESTED', action => (
     (value: string) => action(value)

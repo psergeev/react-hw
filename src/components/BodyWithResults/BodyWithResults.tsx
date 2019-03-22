@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Movie } from '../../App';
+import { Movie } from '../App/App';
 import MovieCard from '../MovieCard';
 import ResultsDescription from '../ResultsDescription';
 import ResultsSorter from '../ResultsSorter';
@@ -21,7 +21,7 @@ export default React.memo((props: Props) => {
         />
     ));
 
-    const getResultList = () => {
+    const renderResultList = () => {
         if (!props.movies.length && !props.isEmpty) {
             return <h2 className="results-not-found">No films found</h2>;
         }
@@ -42,7 +42,7 @@ export default React.memo((props: Props) => {
             {props.genre ? <ResultsDescription genre={props.genre} /> :
                 <ResultsSorter moviesCount={props.movies.length} />}
 
-            {getResultList()}
+            {renderResultList()}
         </section>
     );
 });

@@ -2,19 +2,16 @@ import { shallow } from 'enzyme';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import App from './App';
-import movies from './state/__fixtures__/movies';
 
-jest.mock('./components/HeaderWithDetails', () => 'HeaderWithDetails');
-jest.mock('./components/HeaderWithSearch', () => 'HeaderWithSearch');
-jest.mock('./components/BodyWithResults', () => 'BodyWithResults');
-jest.mock('./components/Footer', () => 'Footer');
+jest.mock('./../HeaderWithDetails', () => 'HeaderWithDetails');
+jest.mock('./../HeaderWithSearch', () => 'HeaderWithSearch');
+jest.mock('./../BodyWithResults', () => 'BodyWithResults');
+jest.mock('./../Footer', () => 'Footer');
 
 const props = {
     movies: [],
     selectedMovie: null,
-    onBackToSearchClick: jest.fn(),
-    onMovieCardClick: jest.fn(),
-    getMovies: jest.fn()
+    handleMovieCardClick: jest.fn(),
 };
 
 test('App component works as expected', () => {

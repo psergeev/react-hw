@@ -8,7 +8,7 @@ jest.mock('../VoteMark', () => 'VoteMark');
 test('HeaderWithDetails component works as expected', () => {
     const component = renderer.create(
         <HeaderWithDetails
-            onBackToSearchClick={jest.fn()}
+            handleBackToSearchClick={jest.fn()}
             movie={movie}
         />
     );

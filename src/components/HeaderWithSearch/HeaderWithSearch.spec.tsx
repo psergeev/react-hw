@@ -9,8 +9,8 @@ const props = {
     searchBy: 'title',
     sortBy: 'rating',
     search: '',
-    onSearchByChange: jest.fn(),
-    onSearchClick: jest.fn(),
+    handleSearchByChange: jest.fn(),
+    handleSearchClick: jest.fn(),
 };
 
 test('HeaderWithSearch component works as expected', () => {
@@ -23,8 +23,7 @@ test('HeaderWithSearch component works as expected', () => {
 });
 
 test('HeaderWithSearch should switch search by button', () => {
-    const testProps = { ...props, searchBy: 'genre' };
-    const component = shallow(<HeaderWithSearch {...testProps} />);
+    const component = shallow(<HeaderWithSearch {...props} searchBy="genre" />);
 
     expect(component).toMatchSnapshot();
 });

@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/coverage" />
-      <excludeFolder url="file://$MODULE_DIR$/src/__snapshots__" />
       <excludeFolder url="file://$MODULE_DIR$/src/components/BodyWithResults/__fixtures__" />
       <excludeFolder url="file://$MODULE_DIR$/src/components/BodyWithResults/__snapshots__" />
       <excludeFolder url="file://$MODULE_DIR$/src/components/Footer/__snapshots__" />
@@ -18,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/src/components/SearchByButton/__snapshots__" />
       <excludeFolder url="file://$MODULE_DIR$/src/components/SortByButton/__snapshots__" />
       <excludeFolder url="file://$MODULE_DIR$/src/components/VoteMark/__snapshots__" />
+      <excludeFolder url="file://$MODULE_DIR$/src/components/__snapshots__" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

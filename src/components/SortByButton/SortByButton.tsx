@@ -4,7 +4,7 @@ import './SortByButton.scss';
 export interface Props {
     value: string;
     selected: boolean;
-    handleSortByClick: Function;
+    handleSortByClick: (value: string) => void;
 }
 
 export default React.memo((props: Props) => {

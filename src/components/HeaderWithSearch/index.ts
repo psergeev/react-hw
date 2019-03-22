@@ -12,7 +12,7 @@ const mapStateToProps = (state: State) => ({
 export default connect(
     mapStateToProps,
     {
-        onSearchByChange: searchByAction,
-        onSearchClick: fetchMoviesAction.request,
+        handleSearchByChange: searchByAction,
+        handleSearchClick: fetchMoviesAction.request,
     }
 )(HeaderWithSearch);

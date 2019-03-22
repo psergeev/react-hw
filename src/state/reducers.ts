@@ -1,6 +1,6 @@
 import { ActionType, getType } from 'typesafe-actions';
 import { DeepReadonly } from 'utility-types';
-import { Movie } from '../App';
+import { Movie } from '../components/App/App';
 import * as actions from './actions';
 
 export type State = DeepReadonly<{
@@ -53,7 +53,7 @@ export default function (state = initialState, action: Action) {
         case getType(actions.fetchMoviesAction.success):
             return { ...state, movies: action.payload, isEmpty: false };
         case getType(actions.fetchMoviesAction.request):
-            return { ...state, search: action.payload.search };
+            return { ...state, search: action.payload };
         default:
             return state;
     }

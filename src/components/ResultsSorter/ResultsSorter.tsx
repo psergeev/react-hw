@@ -5,7 +5,7 @@ import './ResultsSorter.scss';
 interface Props {
     moviesCount: number;
     sortBy: string;
-    onSortByChange: Function;
+    handleSortByChange: (value: string) => void;
 }
 
 export default React.memo((props: Props) => (
@@ -17,13 +17,13 @@ export default React.memo((props: Props) => (
                 <SortByButton
                     value="release date"
                     selected={props.sortBy === 'release date'}
-                    handleSortByClick={props.onSortByChange}
+                    handleSortByClick={props.handleSortByChange}
                 />
 
                 <SortByButton
                     value="rating"
                     selected={props.sortBy === 'rating'}
-                    handleSortByClick={props.onSortByChange}
+                    handleSortByClick={props.handleSortByChange}
                 />
             </div>
         </div>

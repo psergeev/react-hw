@@ -29,6 +29,6 @@ test('reducer for showDetailsAction should works as expected', () => {
 
 test('reducer for fetchMoviesAction.request should works as expected', () => {
     let state: any = { search: null };
-    state = reducer(state, actions.fetchMoviesAction.request({ search: 'value' }));
+    state = reducer(state, actions.fetchMoviesAction.request('value'));
     expect(state).toEqual({ search: 'value' });
 });

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './App.scss';
-import BodyWithResults from './components/BodyWithResults';
-import Footer from './components/Footer';
-import HeaderWithDetails from './components/HeaderWithDetails';
-import HeaderWithSearch from './components/HeaderWithSearch';
+import BodyWithResults from '../BodyWithResults';
+import Footer from '../Footer';
+import HeaderWithDetails from '../HeaderWithDetails';
+import HeaderWithSearch from '../HeaderWithSearch';
 
 export interface Movie {
     id: number;
@@ -20,9 +20,7 @@ export interface Movie {
 interface Props {
     movies: Movie[];
     selectedMovie: Movie | null;
-    onBackToSearchClick: any;
-    onMovieCardClick: any;
-    getMovies: any;
+    handleMovieCardClick: (movie: Movie) => void;
 }
 
 interface AppState {
@@ -47,9 +45,11 @@ export default class extends React.PureComponent<Props, AppState> {
     }
 
     public handleMovieCardClick(title: string) {
-        const selectedMovie = this.props.movies.find(movie => movie.title === title) || null;
+        const selectedMovie = this.props.movies.find(movie => movie.title === title);
 
-        this.props.onMovieCardClick(selectedMovie);
+        if (selectedMovie) {
+            this.props.handleMovieCardClick(selectedMovie);
+        }
     }
 
     private _getHeaderComponent() {
