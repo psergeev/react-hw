@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import MovieCard from '.';
+import MovieCard from './MovieCard';
 import movie from './__fixtures__/movie';
 
 

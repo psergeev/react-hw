@@ -4,48 +4,28 @@ import './ResultsSorter.scss';
 
 interface Props {
     moviesCount: number;
-}
-
-interface State {
     sortBy: string;
+    handleSortByChange: (value: string) => void;
 }
 
-export default class extends React.PureComponent<Props, State> {
-    public constructor(props: Props) {
-        super(props);
+export default React.memo((props: Props) => (
+    <div className="results-sorter">
+        <div className={!props.moviesCount ? 'hidden' : ''}>
+            <div>{`${props.moviesCount} movie(s) found`}</div>
+            <div>
+                <span>Sort by</span>
+                <SortByButton
+                    value="release date"
+                    selected={props.sortBy === 'release date'}
+                    handleSortByClick={props.handleSortByChange}
+                />
 
-        this.state = {
-            sortBy: 'rating'
-        };
-
-        this._handleSortByClick = this._handleSortByClick.bind(this);
-    }
-
-    private _handleSortByClick(value: string) {
-        this.setState({
-            sortBy: value
-        });
-    }
-
-    public render() {
-        return (
-            <div className="results-sorter">
-                <div>{`${this.props.moviesCount} movie(s) found`}</div>
-                <div>
-                    <span>Sort by</span>
-                    <SortByButton
-                        value="release date"
-                        selected={this.state.sortBy === 'release date'}
-                        handleSortByClick={this._handleSortByClick}
-                    />
-
-                    <SortByButton
-                        value="rating"
-                        selected={this.state.sortBy === 'rating'}
-                        handleSortByClick={this._handleSortByClick}
-                    />
-                </div>
+                <SortByButton
+                    value="rating"
+                    selected={props.sortBy === 'rating'}
+                    handleSortByClick={props.handleSortByChange}
+                />
             </div>
-        );
-    }
-}
+        </div>
+    </div>
+));

@@ -54,6 +54,12 @@ header {
             text-transform: uppercase;
             padding: 10px 60px;
             border: none;
+            cursor: pointer;
+
+            &.disabled {
+                background-color: #f4a9af;
+                cursor: auto;
+            }
         }
     }
 }

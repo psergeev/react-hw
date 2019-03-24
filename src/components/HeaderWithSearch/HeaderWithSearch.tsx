@@ -1,35 +1,49 @@
 import * as React from 'react';
-import './HeaderWithSearch.scss';
 import SearchByButton from '../SearchByButton';
+import './HeaderWithSearch.scss';
+
+interface Props {
+    searchBy: string;
+    sortBy: string;
+    search: string;
+    handleSearchByChange: (value: string) => void;
+    handleSearchClick: (value: string) => void;
+}
 
 interface State {
     textTyped: string;
-    searchBy: string;
 }
 
-export default class extends React.PureComponent<{}, State> {
-    public constructor(props: {}) {
+export default class extends React.PureComponent<Props, State> {
+    public constructor(props: Props) {
         super(props);
 
         this.state = {
-            textTyped: '',
-            searchBy: 'title'
+            textTyped: props.search || ''
         };
 
         this._handleKeyPress = this._handleKeyPress.bind(this);
-        this._handleSearchByClick = this._handleSearchByClick.bind(this);
+        this._handleSearchClick = this._handleSearchClick.bind(this);
     }
 
-    private _handleSearchByClick(value: string) {
-        this.setState({
-            searchBy: value
-        });
+    public componentDidUpdate(prevProps: Props) {
+        if (this.props.sortBy !== prevProps.sortBy) {
+            this._handleSearchClick(null, this.props.search);
+        }
     }
 
     private _handleKeyPress(event: React.ChangeEvent<HTMLInputElement>) {
         this.setState({
             textTyped: (event.target as any).value
         });
+    }
+
+    private _handleSearchClick(event: any, search?: string) {
+        const searchValue = search || this.state.textTyped;
+
+        if (searchValue.length) {
+            this.props.handleSearchClick(this.state.textTyped);
+        }
     }
 
     public render() {
@@ -49,18 +63,25 @@ export default class extends React.PureComponent<{}, State> {
 
                         <SearchByButton
                             value="title"
-                            selected={this.state.searchBy === 'title'}
-                            handleSearchByClick={this._handleSearchByClick}
+                            selected={this.props.searchBy === 'title'}
+                            handleSearchByClick={this.props.handleSearchByChange}
                         />
 
                         <SearchByButton
-                            value="genre"
-                            selected={this.state.searchBy === 'genre'}
-                            handleSearchByClick={this._handleSearchByClick}
+                            value="genres"
+                            selected={this.props.searchBy === 'genres'}
+                            handleSearchByClick={this.props.handleSearchByChange}
                         />
                     </div>
 
-                    <button type="button">Search</button>
+                    <button
+                        type="button"
+                        onClick={this._handleSearchClick}
+                        disabled={this.state.textTyped.length === 0}
+                        className={`${(this.state.textTyped.length === 0 ? 'disabled' : '')}`}
+                    >
+                        Search
+                    </button>
                 </div>
             </header>
         );

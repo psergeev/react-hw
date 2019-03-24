@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import BodyWithResults from '.';
 import movies from './__fixtures__/movies';
+import BodyWithResults from './BodyWithResults';
 
 jest.mock('../ResultsSorter', () => 'ResultsSorter');
 jest.mock('../ResultsDescription', () => 'ResultsDescription');
@@ -13,6 +13,7 @@ test('BodyWithResults component works as expected', () => {
             handleMovieCardClick={jest.fn()}
             genre="Fiction"
             movies={movies}
+            isEmpty
         />
     );
 
@@ -26,6 +27,7 @@ test('BodyWithResults component shows ResultsSorter without genre', () => {
             handleMovieCardClick={jest.fn()}
             genre=""
             movies={movies}
+            isEmpty
         />
     );
 

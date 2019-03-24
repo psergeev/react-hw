@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
-import VoteMark from '.';
+import VoteMark from './VoteMark';
 
 test('VoteMark component works as expected', () => {
     const component = renderer.create(

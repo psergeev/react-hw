@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Movie } from '../../App';
+import { Movie } from '../App/App';
 import VoteMark from '../VoteMark';
 import './HeaderWithDetails.scss';
 
 interface Props {
     movie: Movie;
-    handleBackToSearchClick: React.MouseEventHandler;
+    handleBackToSearchClick: () => void;
 }
 
 export default React.memo((props: Props) => (
