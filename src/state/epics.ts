@@ -23,6 +23,19 @@ const moviesGetEpic: Epic<Action, Action, State> =
             ))
         ));
 
+const movieGetEpic: Epic<Action, Action, State> =
+    action$ => (
+        action$.pipe(
+            filter(isActionOf(actions.fetchMovieAction.request)),
+            switchMap(action => (
+                from(api.getMovie(action.payload))
+                    .pipe(
+                        map((movie: Movie) => actions.fetchMovieAction.success(movie)),
+                        catchError(error => of(actions.fetchMovieAction.failure(error)))
+                    )
+            ))
+        ));
+
 
 const searchSimilar: Epic<Action, Action, State> =
     (action$, state$) => (
@@ -38,4 +51,4 @@ const searchSimilar: Epic<Action, Action, State> =
             ))
         ));
 
-export default combineEpics(moviesGetEpic, searchSimilar);
+export default combineEpics(moviesGetEpic, movieGetEpic, searchSimilar);

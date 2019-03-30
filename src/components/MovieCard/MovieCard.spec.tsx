@@ -3,10 +3,16 @@ import * as renderer from 'react-test-renderer';
 import MovieCard from './MovieCard';
 import movie from './__fixtures__/movie';
 
+const routeComponentProps = {
+    history: {},
+    location: {},
+    match: {},
+} as any;
 
 test('MovieCard component works as expected', () => {
     const component = renderer.create(
         <MovieCard
+            {...routeComponentProps}
             handleMovieCardClick={jest.fn()}
             movie={movie}
         />

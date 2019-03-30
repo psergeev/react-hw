@@ -23,32 +23,6 @@ test('App component works as expected', () => {
     expect(tree).toMatchSnapshot();
 });
 
-test('App component should show header with details', () => {
-    const component = shallow(<App {...props} />);
-
-    component.setProps({
-        selectedMovie: { genres: [] }
-    });
-
-    expect(component).toMatchSnapshot();
-});
-
-test('App component should go back from the description to search', () => {
-    const component = shallow(<App {...props} />);
-
-    component.setProps({
-        selectedMovie: { genres: [] }
-    });
-
-    expect(component.find('HeaderWithDetails').length).toBe(1);
-
-    component.setProps({
-        selectedMovie: null
-    });
-
-    expect(component.find('HeaderWithSearch').length).toBe(1);
-});
-
 test('App component should catch js errors', () => {
     const component = shallow(<App {...props} />);
 

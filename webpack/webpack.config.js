@@ -12,6 +12,10 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
 
+    output: {
+        publicPath: '/'
+    },
+
     module: {
         rules: [{
             test: /\.(ts|js)x?$/,

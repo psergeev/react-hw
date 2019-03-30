@@ -11,7 +11,7 @@ exports[`HeaderWithDetails component works as expected 1`] = `
       netflixroulette
     </h1>
     <button
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       BACK TO SEARCH

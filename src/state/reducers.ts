@@ -45,8 +45,7 @@ export default function (state = initialState, action: Action) {
         case getType(actions.showDetailsAction):
             return {
                 ...state,
-                selectedMovie:
-                action.payload,
+                selectedMovie: action.payload,
                 prevMovies: [...state.movies],
                 movies: []
             };
@@ -54,6 +53,17 @@ export default function (state = initialState, action: Action) {
             return { ...state, movies: action.payload, isEmpty: false };
         case getType(actions.fetchMoviesAction.request):
             return { ...state, search: action.payload };
+
+        case getType(actions.fetchMovieAction.request):
+            return {
+                ...state,
+                prevMovies: [...state.movies],
+                movies: []
+            };
+
+        case getType(actions.fetchMovieAction.success):
+            return { ...state, selectedMovie: action.payload };
+
         default:
             return state;
     }

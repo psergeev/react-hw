@@ -12,21 +12,21 @@ interface Props {
     isEmpty: boolean;
 }
 
-export default React.memo((props: Props) => {
-    const movieCards = props.movies.map(movie => (
+export default React.memo(({ movies, handleMovieCardClick, genre, isEmpty }: Props) => {
+    const movieCards = movies.map(movie => (
         <MovieCard
-            handleMovieCardClick={props.handleMovieCardClick}
             movie={movie}
+            handleMovieCardClick={handleMovieCardClick}
             key={movie.title}
         />
     ));
 
     const renderResultList = () => {
-        if (!props.movies.length && !props.isEmpty) {
+        if (!movies.length && !isEmpty) {
             return <h2 className="results-not-found">No films found</h2>;
         }
 
-        if (!props.isEmpty) {
+        if (!isEmpty) {
             return (
                 <div className="results-list">
                     {movieCards}
@@ -39,8 +39,8 @@ export default React.memo((props: Props) => {
 
     return (
         <section className="results">
-            {props.genre ? <ResultsDescription genre={props.genre} /> :
-                <ResultsSorter moviesCount={props.movies.length} />}
+            {genre ? <ResultsDescription genre={genre} /> :
+                <ResultsSorter moviesCount={movies.length} />}
 
             {renderResultList()}
         </section>

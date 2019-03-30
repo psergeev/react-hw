@@ -6,4 +6,9 @@ export default class {
             .then(response => response.json())
             .then(json => json.data);
     }
+
+    public static getMovie(id: string) {
+        return fetch(`http://react-cdp-api.herokuapp.com/movies/${id}`)
+            .then(response => response.json());
+    }
 }

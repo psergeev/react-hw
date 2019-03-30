@@ -22,3 +22,10 @@ export const fetchMoviesAction = createAsyncAction(
     'FETCH_MOVIES_SUCCESS',
     'FETCH_MOVIES_FAILURE'
 )<string, Movie[], Error>();
+
+
+export const fetchMovieAction = createAsyncAction(
+    'FETCH_MOVIE_REQUEST',
+    'FETCH_MOVIE_SUCCESS',
+    'FETCH_MOVIE_FAILURE'
+)<string, Movie, Error>();

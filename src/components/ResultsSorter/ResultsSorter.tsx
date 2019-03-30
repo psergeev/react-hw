@@ -8,22 +8,22 @@ interface Props {
     handleSortByChange: (value: string) => void;
 }
 
-export default React.memo((props: Props) => (
+export default React.memo(({ moviesCount, sortBy, handleSortByChange }: Props) => (
     <div className="results-sorter">
-        <div className={!props.moviesCount ? 'hidden' : ''}>
-            <div>{`${props.moviesCount} movie(s) found`}</div>
+        <div className={!moviesCount ? 'hidden' : ''}>
+            <div>{`${moviesCount} movie(s) found`}</div>
             <div>
                 <span>Sort by</span>
                 <SortByButton
                     value="release date"
-                    selected={props.sortBy === 'release date'}
-                    handleSortByClick={props.handleSortByChange}
+                    selected={sortBy === 'release date'}
+                    handleSortByClick={handleSortByChange}
                 />
 
                 <SortByButton
                     value="rating"
-                    selected={props.sortBy === 'rating'}
-                    handleSortByClick={props.handleSortByChange}
+                    selected={sortBy === 'rating'}
+                    handleSortByClick={handleSortByChange}
                 />
             </div>
         </div>
