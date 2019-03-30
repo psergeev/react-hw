@@ -7,20 +7,20 @@ interface Props {
     handleSearchByClick: (value: string) => void;
 }
 
-export default React.memo((props: Props) => {
-    const handleSearchByClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+export default React.memo(({ value, selected, handleSearchByClick }: Props) => {
+    const onClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
 
-        return props.handleSearchByClick(props.value);
+        return handleSearchByClick(value);
     };
 
     return (
         <a
             href="#"
-            onClick={handleSearchByClick}
-            className={`search-by-button ${(props.selected ? 'selected' : '')}`}
+            onClick={onClick}
+            className={`search-by-button ${(selected ? 'selected' : '')}`}
         >
-            {props.value}
+            {value}
         </a>
     );
 });

@@ -62,9 +62,9 @@ export default class extends React.PureComponent<Props, State> {
             <main>
                 <Router>
                     <Switch>
-                        <Route exact path="/" component={HeaderWithSearch} />
                         <Route path="/search/:typedText" component={HeaderWithSearch} />
                         <Route path="/film/:id" component={HeaderWithDetails} />
+                        <Route path="/" component={HeaderWithSearch} />
                     </Switch>
                 </Router>
 

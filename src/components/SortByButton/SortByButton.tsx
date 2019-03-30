@@ -7,20 +7,20 @@ export interface Props {
     handleSortByClick: (value: string) => void;
 }
 
-export default React.memo((props: Props) => {
-    const handleSearchByClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+export default React.memo(({ value, selected, handleSortByClick }: Props) => {
+    const onClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
 
-        return props.handleSortByClick(props.value);
+        return handleSortByClick(value);
     };
 
     return (
         <a
             href="#"
-            onClick={handleSearchByClick}
-            className={`sort-by-button ${(props.selected ? 'selected' : '')}`}
+            onClick={onClick}
+            className={`sort-by-button ${(selected ? 'selected' : '')}`}
         >
-            {props.value}
+            {value}
         </a>
     );
 });

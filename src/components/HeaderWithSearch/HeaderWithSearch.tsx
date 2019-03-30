@@ -42,10 +42,6 @@ export default class extends React.PureComponent<Props, State> {
         if (this.props.sortBy !== prevProps.sortBy) {
             this._handleSearch(this.props.search);
         }
-
-        if (this.props.match.params.typedText !== prevProps.match.params.typedText) {
-            this._handleSearch(this.props.match.params.typedText);
-        }
     }
 
     private _handleKeyPress(event: React.ChangeEvent<HTMLInputElement>) {
@@ -63,6 +59,7 @@ export default class extends React.PureComponent<Props, State> {
     private _onSearchButtonClick() {
         if (this.state.textTyped.length) {
             this.props.history.push(`/search/${this.state.textTyped}`);
+            this._handleSearch(this.state.textTyped);
         }
     }
 

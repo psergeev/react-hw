@@ -8,10 +8,10 @@ interface Props extends RouteComponentProps<any> {
     movie: Movie;
 }
 
-export default React.memo((props: Props) => {
+export default React.memo(({ handleMovieCardClick, movie, history }: Props) => {
     const _handleMovieCardClick = () => {
-        props.history.push(`/film/${props.movie.id}`);
-        props.handleMovieCardClick(props.movie.title);
+        history.push(`/film/${movie.id}`);
+        handleMovieCardClick(movie.title);
     };
 
     return (
@@ -20,12 +20,12 @@ export default React.memo((props: Props) => {
             onClick={_handleMovieCardClick}
             role="presentation"
         >
-            <li><img src={props.movie.poster_path} width="250px" alt="{props.title}" draggable={false} /></li>
+            <li><img src={movie.poster_path} width="250px" alt="{props.title}" draggable={false} /></li>
             <li className="title-date">
-                <span className="title">{props.movie.title}</span>
-                <span className="date">{props.movie.release_date.split('-')[0]}</span>
+                <span className="title">{movie.title}</span>
+                <span className="date">{movie.release_date.split('-')[0]}</span>
             </li>
-            <li className="genres">{props.movie.genres.join(' & ')}</li>
+            <li className="genres">{movie.genres.join(' & ')}</li>
         </ul>
     );
 });

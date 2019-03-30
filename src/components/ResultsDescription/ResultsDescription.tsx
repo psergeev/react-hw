@@ -5,6 +5,6 @@ interface Props {
     genre: string;
 }
 
-export default React.memo((props: Props) => (
-    <div className="results-description">{`Films by ${props.genre} genre`}</div>
+export default React.memo(({ genre }: Props) => (
+    <div className="results-description">{`Films by ${genre} genre`}</div>
 ));
