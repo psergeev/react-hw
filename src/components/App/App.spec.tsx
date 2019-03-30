@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import * as renderer from 'react-test-renderer';
 import App from './App';
 
@@ -12,6 +13,8 @@ const props = {
     movies: [],
     selectedMovie: null,
     handleMovieCardClick: jest.fn(),
+    Router: BrowserRouter,
+    location: null
 };
 
 test('App component works as expected', () => {

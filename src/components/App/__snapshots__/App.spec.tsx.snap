@@ -8,44 +8,6 @@ exports[`App component should catch js errors 1`] = `
 
 exports[`App component works as expected 1`] = `
 <main>
-  <HeaderWithSearch
-    history={
-      Object {
-        "action": "POP",
-        "block": [Function],
-        "createHref": [Function],
-        "go": [Function],
-        "goBack": [Function],
-        "goForward": [Function],
-        "length": 1,
-        "listen": [Function],
-        "location": Object {
-          "hash": "",
-          "pathname": "/",
-          "search": "",
-          "state": undefined,
-        },
-        "push": [Function],
-        "replace": [Function],
-      }
-    }
-    location={
-      Object {
-        "hash": "",
-        "pathname": "/",
-        "search": "",
-        "state": undefined,
-      }
-    }
-    match={
-      Object {
-        "isExact": true,
-        "params": Object {},
-        "path": "/",
-        "url": "/",
-      }
-    }
-  />
   <BodyWithResults
     genre={null}
     handleMovieCardClick={[Function]}

@@ -32,7 +32,7 @@ export default class extends React.PureComponent<Props, State> {
         this._onSearchButtonClick = this._onSearchButtonClick.bind(this);
     }
 
-    public componentDidMount() {
+    public componentWillMount() {
         if (this.props.match.params.typedText) {
             this._handleSearch(this.props.match.params.typedText);
         }
