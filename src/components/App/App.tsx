@@ -62,15 +62,17 @@ export default class extends React.PureComponent<Props, State> {
             return <h1>Something went wrong with js code.</h1>;
         }
 
+        const { Router } = this.props;
+
         return (
             <main>
-                <this.props.Router location={this.props.location}>
+                <Router location={this.props.location}>
                     <Switch>
                         <Route path="/search/:typedText" component={AsyncHeaderWithSearch} />
                         <Route path="/film/:id" component={AsyncHeaderWithDetails} />
                         <Route path="/" component={AsyncHeaderWithSearch} />
                     </Switch>
-                </this.props.Router>
+                </Router>
 
                 <BodyWithResults
                     genre={(this.props.selectedMovie && this.props.selectedMovie.genres.join(' & ')) as string}

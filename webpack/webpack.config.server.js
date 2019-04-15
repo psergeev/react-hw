@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals');
 const webpackConfig = require('./webpack.config.common');
 const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 module.exports = merge(webpackConfig, {
     name: 'server',
@@ -20,5 +21,8 @@ module.exports = merge(webpackConfig, {
                 options: { exportOnlyLocals: true }
             }]
         }]
-    }
+    },
+    plugins: [new webpack.optimize.LimitChunkCountPlugin({
+        maxChunks: 1
+    })]
 });

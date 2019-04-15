@@ -8,7 +8,10 @@ const app = Express();
 
 const compiler = Webpack(webpackConfig);
 app.use(WebpackDevMiddleware(compiler, {
-    serverSideRender: true
+    publicPath: '/dist',
+    writeToDisk(filePath) {
+        return /loadable-stats/.test(filePath);
+    },
 }));
 app.use(WebpackHotServerMiddleware(compiler));
 
