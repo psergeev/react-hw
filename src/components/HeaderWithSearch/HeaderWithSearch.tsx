@@ -22,7 +22,6 @@ interface State {
 export default class extends React.PureComponent<Props, State> {
     public constructor(props: Props) {
         super(props);
-
         this.state = {
             textTyped: props.match.params.typedText || props.search || ''
         };
@@ -30,9 +29,7 @@ export default class extends React.PureComponent<Props, State> {
         this._handleKeyPress = this._handleKeyPress.bind(this);
         this._handleSearch = this._handleSearch.bind(this);
         this._onSearchButtonClick = this._onSearchButtonClick.bind(this);
-    }
 
-    public componentDidMount() {
         if (this.props.match.params.typedText) {
             this._handleSearch(this.props.match.params.typedText);
         }

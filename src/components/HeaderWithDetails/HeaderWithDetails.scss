@@ -2,6 +2,14 @@ header {
     background-color: #222;
     padding: 20px 50px;
 
+    .title {
+        color: #b3505d;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
     .top-line {
         display: flex;
         justify-content: space-between;

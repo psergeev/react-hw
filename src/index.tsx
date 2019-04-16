@@ -1,24 +1,22 @@
+import { loadableReady } from '@loadable/component';
 import * as React from 'react';
 import 'react-app-polyfill/ie11';
-import * as ReactDom from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react';
-import App from './components/App';
-import PageNotFound from './components/PageNotFound/PageNotFound';
+import { hydrate } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import Root from './components/Root';
 import './polyfills';
-import { persistor, store } from './state/store';
+import configureStore from './state/store';
 
-ReactDom.render(
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <Router>
-                <Switch>
-                    <Route path="/(|search|film)" render={props => <App key={props.location.key} />} />
-                    <Route component={PageNotFound} />
-                </Switch>
-            </Router>
-        </PersistGate>
-    </Provider>,
-    document.getElementById('app')
-);
+const { store } = configureStore(window && window.PRELOADED_STATE);
+
+loadableReady(() => {
+    hydrate(
+        <Root
+            context={null}
+            location={null}
+            Router={BrowserRouter}
+            store={store}
+        />,
+        document.getElementById('app')
+    );
+});

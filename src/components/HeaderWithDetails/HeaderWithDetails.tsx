@@ -20,9 +20,7 @@ export default class extends React.PureComponent<Props, {}> {
         super(props);
 
         this._handleBackToSearchClick = this._handleBackToSearchClick.bind(this);
-    }
 
-    public componentDidMount() {
         if (!this.props.movie) {
             this.props.fetchMovie(this.props.match.params.id);
         }

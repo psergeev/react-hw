@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import loadable from '@loadable/component'
+import { Route, Switch } from 'react-router-dom';
 import BodyWithResults from '../BodyWithResults';
 import Footer from '../Footer';
-import HeaderWithDetails from '../HeaderWithDetails';
-import HeaderWithSearch from '../HeaderWithSearch';
 import './App.scss';
 
 export interface Movie {
@@ -22,11 +21,16 @@ interface Props {
     movies: Movie[];
     selectedMovie: Movie | null;
     handleMovieCardClick: (movie: Movie) => void;
+    Router: any;
+    location: string;
 }
 
 interface State {
     hasError: boolean;
 }
+
+const AsyncHeaderWithSearch = loadable(() => import('../HeaderWithSearch'));
+const AsyncHeaderWithDetails = loadable(() => import('../HeaderWithDetails'));
 
 export default class extends React.PureComponent<Props, State> {
     public constructor(props: Props) {
@@ -58,13 +62,15 @@ export default class extends React.PureComponent<Props, State> {
             return <h1>Something went wrong with js code.</h1>;
         }
 
+        const { Router } = this.props;
+
         return (
             <main>
-                <Router>
+                <Router location={this.props.location}>
                     <Switch>
-                        <Route path="/search/:typedText" component={HeaderWithSearch} />
-                        <Route path="/film/:id" component={HeaderWithDetails} />
-                        <Route path="/" component={HeaderWithSearch} />
+                        <Route path="/search/:typedText" component={AsyncHeaderWithSearch} />
+                        <Route path="/film/:id" component={AsyncHeaderWithDetails} />
+                        <Route path="/" component={AsyncHeaderWithSearch} />
                     </Switch>
                 </Router>
 

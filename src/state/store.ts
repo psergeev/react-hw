@@ -1,28 +1,22 @@
+import { wrapRootEpic } from 'react-redux-epic';
 import { applyMiddleware, compose, createStore } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { persistReducer, persistStore } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import epics from './epics';
-import reducer from './reducers';
+import reducer, { State } from './reducers';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-const persistConfig = {
-    key: 'root',
-    storage,
+export default (initialState?: State) => {
+    const wrappedEpic = wrapRootEpic(epics);
+    const epicMiddleware = createEpicMiddleware();
+
+    const store = createStore(reducer,
+        initialState,
+        composeEnhancers(
+            applyMiddleware(epicMiddleware)
+        ));
+
+    epicMiddleware.run(wrappedEpic);
+
+    return { store, wrappedEpic };
 };
-
-const persistedReducer = persistReducer(persistConfig, reducer);
-const epicMiddleware = createEpicMiddleware();
-
-
-const store = createStore(persistedReducer,
-    composeEnhancers(
-        applyMiddleware(epicMiddleware)
-    ));
-
-const persistor = persistStore(store);
-
-epicMiddleware.run(epics);
-
-export { store, persistor };
