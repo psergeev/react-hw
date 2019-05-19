@@ -1,5 +1,6 @@
+import { Button, withStyles, WithStyles } from '@material-ui/core';
 import * as React from 'react';
-import './SortByButton.scss';
+import styles from './SortByButton.styles';
 
 export interface Props {
     value: string;
@@ -7,7 +8,9 @@ export interface Props {
     handleSortByClick: (value: string) => void;
 }
 
-export default React.memo(({ value, selected, handleSortByClick }: Props) => {
+type PropsWithStyles = Props & WithStyles<'button' | 'selected'>;
+
+function SortByButton({ value, selected, handleSortByClick, classes }: PropsWithStyles) {
     const onClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
 
@@ -15,12 +18,14 @@ export default React.memo(({ value, selected, handleSortByClick }: Props) => {
     };
 
     return (
-        <a
+        <Button
             href="#"
             onClick={onClick}
-            className={`sort-by-button ${(selected ? 'selected' : '')}`}
+            className={`${classes.button} ${(selected ? classes.selected : '')}`}
         >
             {value}
-        </a>
+        </Button>
     );
-});
+}
+
+export default React.memo(withStyles(styles)(SortByButton));

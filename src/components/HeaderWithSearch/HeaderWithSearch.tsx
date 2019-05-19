@@ -1,3 +1,5 @@
+import { Button } from '@material-ui/core';
+import Input from '@material-ui/core/Input';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import SearchByButton from '../SearchByButton';
@@ -66,7 +68,7 @@ export default class extends React.PureComponent<Props, State> {
                 <h1 className="title">netflixroulette</h1>
                 <p className="find-text">find your movie</p>
                 <div className="search-input">
-                    <input
+                    <Input
                         value={this.state.textTyped}
                         onChange={this._handleKeyPress}
                     />
@@ -88,14 +90,14 @@ export default class extends React.PureComponent<Props, State> {
                         />
                     </div>
 
-                    <button
-                        type="button"
+                    <Button
+                        variant="contained"
+                        className="searchButton"
                         onClick={this._onSearchButtonClick}
                         disabled={this.state.textTyped.length === 0}
-                        className={`${(this.state.textTyped.length === 0 ? 'disabled' : '')}`}
                     >
                         Search
-                    </button>
+                    </Button>
                 </div>
             </header>
         );

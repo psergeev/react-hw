@@ -1,21 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SearchByButton component can be selected 1`] = `
-<a
-  className="search-by-button selected"
-  href="#"
+<button
+  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 SearchByButton-button-1 SearchByButton-selected-2"
+  disabled={false}
+  onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="button"
 >
-  value
-</a>
+  <span
+    className="MuiButton-label-4"
+  >
+    value
+  </span>
+  <span
+    className="MuiTouchRipple-root-32"
+  />
+</button>
 `;
 
 exports[`SearchByButton component works as expected 1`] = `
-<a
-  className="search-by-button "
-  href="#"
+<button
+  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 SearchByButton-button-1 "
+  disabled={false}
+  onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  tabIndex="0"
+  type="button"
 >
-  value
-</a>
+  <span
+    className="MuiButton-label-4"
+  >
+    value
+  </span>
+  <span
+    className="MuiTouchRipple-root-32"
+  />
+</button>
 `;

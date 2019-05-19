@@ -2,20 +2,60 @@
 
 exports[`SortByButton component can be selected 1`] = `
 <a
-  className="sort-by-button selected"
+  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 SortByButton-button-1 SortByButton-selected-2"
   href="#"
+  onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex="0"
 >
-  value
+  <span
+    className="MuiButton-label-4"
+  >
+    value
+  </span>
+  <span
+    className="MuiTouchRipple-root-32"
+  />
 </a>
 `;
 
 exports[`SortByButton component works as expected 1`] = `
 <a
-  className="sort-by-button "
+  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-flat-8 SortByButton-button-1 "
   href="#"
+  onBlur={[Function]}
   onClick={[Function]}
+  onContextMenu={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  role="button"
+  tabIndex="0"
 >
-  value
+  <span
+    className="MuiButton-label-4"
+  >
+    value
+  </span>
+  <span
+    className="MuiTouchRipple-root-32"
+  />
 </a>
 `;
