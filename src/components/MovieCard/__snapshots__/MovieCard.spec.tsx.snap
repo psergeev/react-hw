@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieCard component works as expected 1`] = `
-<ul
-  className="movie-card"
+<div
+  className="MuiPaper-root-2 MuiPaper-elevation1-5 MuiPaper-rounded-3 MuiCard-root-1 card"
   onClick={[Function]}
-  role="presentation"
 >
-  <li>
-    <img
-      alt="{props.title}"
-      draggable={false}
-      src="https://image.tmdb.org/t/p/w500/97fNAi62HawGjWru7PvVmF7RAbU.jpg"
-      width="250px"
-    />
-  </li>
-  <li
-    className="title-date"
+  <div
+    className="MuiCardMedia-root-29 media"
+    style={
+      Object {
+        "backgroundImage": "url(\\"https://image.tmdb.org/t/p/w500/97fNAi62HawGjWru7PvVmF7RAbU.jpg\\")",
+      }
+    }
+    title="Kill Bill: Vol. 1"
+  />
+  <div
+    className="titleDate"
   >
     <span
       className="title"
@@ -27,11 +27,11 @@ exports[`MovieCard component works as expected 1`] = `
     >
       2003
     </span>
-  </li>
-  <li
+  </div>
+  <div
     className="genres"
   >
     Action & Crime
-  </li>
-</ul>
+  </div>
+</div>
 `;

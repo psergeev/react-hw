@@ -18,22 +18,25 @@ header {
     }
 
     .search-input {
-        padding: 10px 30px 10px 20px;
         background-color: black;
-        height: 20px;
-        border-bottom: solid #75383e 2px;
+
+        >div {
+            width: 100%;
+            padding: 5px 0;
+
+            &:before {
+                border-bottom: solid #75383e 2px;
+            }
+
+            &:hover:before {
+                border-bottom: none;
+            }
+        }
 
         input {
-            font-size: 14px;
-            border: none;
-            background-color: transparent;
-            height: 100%;
-            width: 100%;
+            font-size: 16px;
+            margin: 0 15px;
             color: white;
-
-            &:focus {
-                outline: none;
-            }
         }
     }
 
@@ -43,23 +46,21 @@ header {
         justify-content: space-between;
         font-size: 12px;
 
+        .search-by {
+            >span {
+                margin-top: 5px;
+            };
+        }
+
         span {
             text-transform: uppercase;
             color: white;
         }
 
-        button {
+        .searchButton {
             background-color: #F45263;
-            color: white;
             text-transform: uppercase;
             padding: 10px 60px;
-            border: none;
-            cursor: pointer;
-
-            &.disabled {
-                background-color: #f4a9af;
-                cursor: auto;
-            }
         }
     }
 }

@@ -1,9 +1,11 @@
+import { MuiThemeProvider } from '@material-ui/core/styles';
 import * as React from 'react';
-import loadable from '@loadable/component'
+import loadable from '@loadable/component';
 import { Route, Switch } from 'react-router-dom';
 import BodyWithResults from '../BodyWithResults';
 import Footer from '../Footer';
 import './App.scss';
+import theme from './App.theme';
 
 export interface Movie {
     id: number;
@@ -65,22 +67,24 @@ export default class extends React.PureComponent<Props, State> {
         const { Router } = this.props;
 
         return (
-            <main>
-                <Router location={this.props.location}>
-                    <Switch>
-                        <Route path="/search/:typedText" component={AsyncHeaderWithSearch} />
-                        <Route path="/film/:id" component={AsyncHeaderWithDetails} />
-                        <Route path="/" component={AsyncHeaderWithSearch} />
-                    </Switch>
-                </Router>
+            <MuiThemeProvider theme={theme}>
+                <main>
+                    <Router location={this.props.location}>
+                        <Switch>
+                            <Route path="/search/:typedText" component={AsyncHeaderWithSearch} />
+                            <Route path="/film/:id" component={AsyncHeaderWithDetails} />
+                            <Route path="/" component={AsyncHeaderWithSearch} />
+                        </Switch>
+                    </Router>
 
-                <BodyWithResults
-                    genre={(this.props.selectedMovie && this.props.selectedMovie.genres.join(' & ')) as string}
-                    movies={this.props.movies}
-                    handleMovieCardClick={this.handleMovieCardClick}
-                />
-                <Footer />
-            </main>
+                    <BodyWithResults
+                        genre={(this.props.selectedMovie && this.props.selectedMovie.genres.join(' & ')) as string}
+                        movies={this.props.movies}
+                        handleMovieCardClick={this.handleMovieCardClick}
+                    />
+                    <Footer />
+                </main>
+            </MuiThemeProvider>
         );
     }
 }

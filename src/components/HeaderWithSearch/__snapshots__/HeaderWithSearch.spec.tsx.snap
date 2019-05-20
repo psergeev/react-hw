@@ -15,10 +15,19 @@ exports[`HeaderWithSearch component works as expected 1`] = `
   <div
     className="search-input"
   >
-    <input
-      onChange={[Function]}
-      value="Kill Bill"
-    />
+    <div
+      className="MuiInputBase-root-14 MuiInput-root-1 MuiInput-underline-5"
+      onClick={[Function]}
+    >
+      <input
+        className="MuiInputBase-input-24 MuiInput-input-9"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        type="text"
+        value="Kill Bill"
+      />
+    </div>
   </div>
   <div
     className="search-controls"
@@ -41,12 +50,31 @@ exports[`HeaderWithSearch component works as expected 1`] = `
       />
     </div>
     <button
-      className=""
+      className="MuiButtonBase-root-57 MuiButton-root-31 MuiButton-contained-42 MuiButton-raised-45 searchButton"
       disabled={false}
+      onBlur={[Function]}
       onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex="0"
       type="button"
     >
-      Search
+      <span
+        className="MuiButton-label-32"
+      >
+        Search
+      </span>
+      <span
+        className="MuiTouchRipple-root-60"
+      />
     </button>
   </div>
 </header>
@@ -67,7 +95,7 @@ exports[`HeaderWithSearch should show typed text 1`] = `
   <div
     className="search-input"
   >
-    <input
+    <WithStyles(Input)
       onChange={[Function]}
       value="123"
     />
@@ -92,14 +120,14 @@ exports[`HeaderWithSearch should show typed text 1`] = `
         value="genres"
       />
     </div>
-    <button
-      className=""
+    <WithStyles(Button)
+      className="searchButton"
       disabled={false}
       onClick={[Function]}
-      type="button"
+      variant="contained"
     >
       Search
-    </button>
+    </WithStyles(Button)>
   </div>
 </header>
 `;
@@ -119,7 +147,7 @@ exports[`HeaderWithSearch should switch search by button 1`] = `
   <div
     className="search-input"
   >
-    <input
+    <WithStyles(Input)
       onChange={[Function]}
       value="Kill Bill"
     />
@@ -144,14 +172,14 @@ exports[`HeaderWithSearch should switch search by button 1`] = `
         value="genres"
       />
     </div>
-    <button
-      className=""
+    <WithStyles(Button)
+      className="searchButton"
       disabled={false}
       onClick={[Function]}
-      type="button"
+      variant="contained"
     >
       Search
-    </button>
+    </WithStyles(Button)>
   </div>
 </header>
 `;

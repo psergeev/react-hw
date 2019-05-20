@@ -1,3 +1,5 @@
+import { withStyles } from '@material-ui/core';
 import SortByButton from './SortByButton';
+import styles from './SortByButton.styles';
 
-export default SortByButton;
+export default withStyles(styles)(SortByButton);

@@ -1,3 +1,4 @@
+import { Button } from '@material-ui/core';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Movie } from '../App/App';
@@ -37,7 +38,12 @@ export default class extends React.PureComponent<Props, {}> {
                 <header>
                     <div className="top-line">
                         <h1 className="title">netflixroulette</h1>
-                        <button type="button" onClick={this._handleBackToSearchClick}>BACK TO SEARCH</button>
+                        <Button
+                            type="button"
+                            onClick={this._handleBackToSearchClick}
+                        >
+                            BACK TO SEARCH
+                        </Button>
                     </div>
                     <div className="details-line">
                         <img src={this.props.movie.poster_path} alt={this.props.movie.title} />
