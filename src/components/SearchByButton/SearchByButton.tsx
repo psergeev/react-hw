@@ -1,6 +1,5 @@
-import { Button, WithStyles, withStyles } from '@material-ui/core';
+import { Button, WithStyles } from '@material-ui/core';
 import * as React from 'react';
-import styles from './SearchByButton.styles';
 
 interface Props {
     value: string;
@@ -10,7 +9,7 @@ interface Props {
 
 type PropsWithStyles = Props & WithStyles<'button' | 'selected'>;
 
-function SearchByButton({ value, selected, handleSearchByClick, classes }: PropsWithStyles) {
+export default React.memo(({ value, selected, handleSearchByClick, classes }: PropsWithStyles) => {
     const onClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
 
@@ -26,6 +25,4 @@ function SearchByButton({ value, selected, handleSearchByClick, classes }: Props
             {value}
         </Button>
     );
-}
-
-export default React.memo(withStyles(styles)(SearchByButton));
+});

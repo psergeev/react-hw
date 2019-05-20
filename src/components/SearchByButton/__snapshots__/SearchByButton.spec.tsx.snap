@@ -2,7 +2,7 @@
 
 exports[`SearchByButton component can be selected 1`] = `
 <button
-  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 SearchByButton-button-1 SearchByButton-selected-2"
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-textPrimary-4 MuiButton-flat-6 MuiButton-flatPrimary-7 button selected"
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
@@ -20,19 +20,19 @@ exports[`SearchByButton component can be selected 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-4"
+    className="MuiButton-label-2"
   >
     value
   </span>
   <span
-    className="MuiTouchRipple-root-32"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;
 
 exports[`SearchByButton component works as expected 1`] = `
 <button
-  className="MuiButtonBase-root-29 MuiButton-root-3 MuiButton-text-5 MuiButton-textPrimary-6 MuiButton-flat-8 MuiButton-flatPrimary-9 SearchByButton-button-1 "
+  className="MuiButtonBase-root-27 MuiButton-root-1 MuiButton-text-3 MuiButton-textPrimary-4 MuiButton-flat-6 MuiButton-flatPrimary-7 button "
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
@@ -50,12 +50,12 @@ exports[`SearchByButton component works as expected 1`] = `
   type="button"
 >
   <span
-    className="MuiButton-label-4"
+    className="MuiButton-label-2"
   >
     value
   </span>
   <span
-    className="MuiTouchRipple-root-32"
+    className="MuiTouchRipple-root-30"
   />
 </button>
 `;

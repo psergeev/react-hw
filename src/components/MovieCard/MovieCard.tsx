@@ -1,10 +1,8 @@
 import { Card, WithStyles } from '@material-ui/core';
 import CardMedia from '@material-ui/core/CardMedia';
-import { withStyles } from '@material-ui/core/styles';
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { Movie } from '../App/App';
-import movieCardStyles from './MovieCard.styles';
 
 interface Props extends RouteComponentProps<any> {
     handleMovieCardClick: (title: string) => void;
@@ -13,7 +11,7 @@ interface Props extends RouteComponentProps<any> {
 
 type PropsWithStyles = Props & WithStyles<'card' | 'media' | 'titleDate' | 'title' | 'date' | 'genres'>;
 
-function MovieCard({ handleMovieCardClick, movie, history, classes }: PropsWithStyles) {
+export default React.memo(({ handleMovieCardClick, movie, history, classes }: PropsWithStyles) => {
     const _handleMovieCardClick = () => {
         history.push(`/film/${movie.id}`);
         handleMovieCardClick(movie.title);
@@ -36,6 +34,4 @@ function MovieCard({ handleMovieCardClick, movie, history, classes }: PropsWithS
             <div className={classes.genres}>{movie.genres.join(' & ')}</div>
         </Card>
     );
-}
-
-export default React.memo(withStyles(movieCardStyles)(MovieCard));
+});

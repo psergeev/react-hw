@@ -1,3 +1,4 @@
+import classes from 'identity-obj-proxy';
 import * as React from 'react';
 import * as renderer from 'react-test-renderer';
 import MovieCard from './MovieCard';
@@ -12,6 +13,7 @@ const routeComponentProps = {
 test('MovieCard component works as expected', () => {
     const component = renderer.create(
         <MovieCard
+            classes={classes}
             {...routeComponentProps}
             handleMovieCardClick={jest.fn()}
             movie={movie}
